@@ -1,5 +1,8 @@
 package asciiPanel;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Graphics;
@@ -16,6 +19,7 @@ import javax.swing.JPanel;
  * This simulates a code page 437 ASCII terminal display.
  * @author Trystan Spangler
  */
+@Component
 public class AsciiPanel extends JPanel {
 	private static final long serialVersionUID = -4167851861147593092L;
 
@@ -257,6 +261,7 @@ public class AsciiPanel extends JPanel {
      * as the panel dimensions will most likely change
      * @param font
      */
+    @Autowired
     public void setAsciiFont(AsciiFont font)
     {
         if(this.asciiFont == font)
